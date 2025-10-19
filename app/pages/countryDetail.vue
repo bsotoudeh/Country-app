@@ -51,31 +51,31 @@
           <div class="flex flex-col sm:flex-row gap-16 sm:gap-28">
             <div>
               <div class="flex items-center">
-                <h3 class="font-semibold text-lg mr-2">Native Name</h3>
+                <h3 class="font-semibold text-lg mr-2">Native Name:</h3>
                 <p class="text-gray-600 dark:text-gray-400">
                   {{ getNativeName(country.name?.nativeName) }}
                 </p>
               </div>
 
               <div class="flex items-center">
-                <h3 class="font-semibold text-lg mr-2">Population</h3>
+                <h3 class="font-semibold text-lg mr-2">Population:</h3>
                 <p class="text-gray-600 dark:text-gray-400">
                   {{ formatNumber(country.population) }}
                 </p>
               </div>
 
               <div class="flex items-center">
-                <h3 class="font-semibold text-lg mr-2">Region</h3>
+                <h3 class="font-semibold text-lg mr-2">Region:</h3>
                 <p class="text-gray-600 dark:text-gray-400">{{ country.region }}</p>
               </div>
 
               <div class="flex items-center">
-                <h3 class="font-semibold text-lg mr-2">Sub Region</h3>
+                <h3 class="font-semibold text-lg mr-2">Sub Region:</h3>
                 <p class="text-gray-600 dark:text-gray-400">{{ country.subregion || 'N/A' }}</p>
               </div>
 
               <div class="flex items-center">
-                <h3 class="font-semibold text-lg mr-2">Capital</h3>
+                <h3 class="font-semibold text-lg mr-2">Capital:</h3>
                 <p class="text-gray-600 dark:text-gray-400">
                   {{ country.capital?.join(', ') || 'N/A' }}
                 </p>
@@ -84,21 +84,21 @@
 
             <div>
               <div class="flex items-center">
-                <h3 class="font-semibold text-lg mr-2">Top Level Domain</h3>
+                <h3 class="font-semibold text-lg mr-2">Top Level Domain:</h3>
                 <p class="text-gray-600 dark:text-gray-400">
                   {{ country.tld?.join(', ') || 'N/A' }}
                 </p>
               </div>
 
               <div class="flex items-center">
-                <h3 class="font-semibold text-lg mr-2">Currencies</h3>
+                <h3 class="font-semibold text-lg mr-2">Currencies:</h3>
                 <p class="text-gray-600 dark:text-gray-400">
                   {{ getCurrencies(country.currencies) }}
                 </p>
               </div>
 
               <div class="flex items-center">
-                <h3 class="font-semibold text-lg mr-2">Languages</h3>
+                <h3 class="font-semibold text-lg mr-2">Languages:</h3>
                 <p class="text-gray-600 dark:text-gray-400">
                   {{ getLanguages(country.languages) }}
                 </p>
