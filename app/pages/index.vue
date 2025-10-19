@@ -1,5 +1,5 @@
 <template>
-  <div class="px-8 lg:px-32 py-8" :class="colorMode.value === 'dark' ? 'bg-gray-700' : 'bg-gray-100'">
+  <div class="px-8 lg:px-40 py-8" :class="colorMode.value === 'dark' ? 'bg-gray-700' : 'bg-gray-100'">
     <div class="flex justify-between sm:items-center items-start flex-col sm:flex-row gap-4">
       <SearchInput v-model="searchValue" class="order-1"/>
       <SelectFilter v-model="selectedValue" class="order-2"/>
