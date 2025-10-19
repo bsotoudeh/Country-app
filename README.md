@@ -2,6 +2,8 @@
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
+Deployed at: https://country-r5hc3fxuw-behnoushs-projects.vercel.app/
+
 ## Setup
 
 Make sure to install dependencies:
