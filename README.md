@@ -2,7 +2,7 @@
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-Deployed at: https://country-r8r4jdu21-behnoushs-projects.vercel.app/
+Deployed at: https://country-lskobk46h-behnoushs-projects.vercel.app/
 
 ## Setup
 
