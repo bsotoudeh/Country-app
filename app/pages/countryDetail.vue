@@ -28,7 +28,7 @@
       </div>
 
       <!-- Country Details -->
-      <div v-else-if="country" class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-38 items-center">
+      <div v-else-if="country" class="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-38 items-center">
         <!-- Flag -->
         <div class="order-1">
           <img
