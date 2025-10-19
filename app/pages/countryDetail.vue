@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen" :class="colorMode.value === 'dark' ? 'bg-gray-800' : 'bg-gray-50'">
-    <div class="container mx-auto sm:px-0 px-8 py-8">
+    <div class="container mx-auto 2xl:px-0 px-8 py-8">
       <!-- Back Button -->
       <div class="mb-8">
         <NuxtLink
