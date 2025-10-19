@@ -1,11 +1,11 @@
 <template>
   <div class="min-h-screen" :class="colorMode.value === 'dark' ? 'bg-gray-800' : 'bg-gray-50'">
-    <div class="container mx-auto px-4 py-8">
+    <div class="container mx-auto sm:px-0 px-8 py-8">
       <!-- Back Button -->
       <div class="mb-8">
         <NuxtLink
           to="/"
-          class="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-gray-700 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200"
+          class="inline-flex items-center gap-2 px-8 py-3 bg-white dark:bg-gray-700 rounded shadow-md hover:shadow-lg transition-shadow duration-200"
         >
           <UIcon name="i-lucide-arrow-left" class="w-5 h-5" />
           <span>Back</span>
@@ -28,14 +28,14 @@
       </div>
 
       <!-- Country Details -->
-      <div v-else-if="country" class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div v-else-if="country" class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-38 items-center">
         <!-- Flag -->
         <div class="order-1">
           <img
             :src="country.flags?.png || country.flags?.svg"
             :alt="`${country.name?.common} flag`"
             loading="lazy"
-            class="w-full sm:w-4/5 sm:h-96 h-48 object-cover shadow-lg"
+            class="w-full sm:h-96 h-48 object-cover shadow-lg"
           />
         </div>
 
@@ -48,66 +48,69 @@
           </div>
 
           <!-- Basic Information -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
-            <div class="flex items-center">
-              <h3 class="font-semibold text-lg mr-2">Native Name</h3>
-              <p class="text-gray-600 dark:text-gray-400">
-                {{ getNativeName(country.name?.nativeName) }}
-              </p>
+          <div class="flex flex-col sm:flex-row gap-16 sm:gap-28">
+            <div>
+              <div class="flex items-center">
+                <h3 class="font-semibold text-lg mr-2">Native Name</h3>
+                <p class="text-gray-600 dark:text-gray-400">
+                  {{ getNativeName(country.name?.nativeName) }}
+                </p>
+              </div>
+
+              <div class="flex items-center">
+                <h3 class="font-semibold text-lg mr-2">Population</h3>
+                <p class="text-gray-600 dark:text-gray-400">
+                  {{ formatNumber(country.population) }}
+                </p>
+              </div>
+
+              <div class="flex items-center">
+                <h3 class="font-semibold text-lg mr-2">Region</h3>
+                <p class="text-gray-600 dark:text-gray-400">{{ country.region }}</p>
+              </div>
+
+              <div class="flex items-center">
+                <h3 class="font-semibold text-lg mr-2">Sub Region</h3>
+                <p class="text-gray-600 dark:text-gray-400">{{ country.subregion || 'N/A' }}</p>
+              </div>
+
+              <div class="flex items-center">
+                <h3 class="font-semibold text-lg mr-2">Capital</h3>
+                <p class="text-gray-600 dark:text-gray-400">
+                  {{ country.capital?.join(', ') || 'N/A' }}
+                </p>
+              </div>
             </div>
 
-            <div class="flex items-center">
-              <h3 class="font-semibold text-lg mr-2">Top Level Domain</h3>
-              <p class="text-gray-600 dark:text-gray-400">
-                {{ country.tld?.join(', ') || 'N/A' }}
-              </p>
+            <div>
+              <div class="flex items-center">
+                <h3 class="font-semibold text-lg mr-2">Top Level Domain</h3>
+                <p class="text-gray-600 dark:text-gray-400">
+                  {{ country.tld?.join(', ') || 'N/A' }}
+                </p>
+              </div>
+
+              <div class="flex items-center">
+                <h3 class="font-semibold text-lg mr-2">Currencies</h3>
+                <p class="text-gray-600 dark:text-gray-400">
+                  {{ getCurrencies(country.currencies) }}
+                </p>
+              </div>
+
+              <div class="flex items-center">
+                <h3 class="font-semibold text-lg mr-2">Languages</h3>
+                <p class="text-gray-600 dark:text-gray-400">
+                  {{ getLanguages(country.languages) }}
+                </p>
+              </div>
             </div>
-
-            <div class="flex items-center">
-              <h3 class="font-semibold text-lg mr-2">Population</h3>
-              <p class="text-gray-600 dark:text-gray-400">
-                {{ formatNumber(country.population) }}
-              </p>
-            </div>
-
-            <div class="flex items-center">
-              <h3 class="font-semibold text-lg mr-2">Currencies</h3>
-              <p class="text-gray-600 dark:text-gray-400">
-                {{ getCurrencies(country.currencies) }}
-              </p>
-            </div>
-
-            <div class="flex items-center">
-              <h3 class="font-semibold text-lg mr-2">Region</h3>
-              <p class="text-gray-600 dark:text-gray-400">{{ country.region }}</p>
-            </div>
-
-            <div class="flex items-center">
-              <h3 class="font-semibold text-lg mr-2">Languages</h3>
-              <p class="text-gray-600 dark:text-gray-400">
-                {{ getLanguages(country.languages) }}
-              </p>
-            </div>
-
-            <div class="flex items-center">
-              <h3 class="font-semibold text-lg mr-2">Sub Region</h3>
-              <p class="text-gray-600 dark:text-gray-400">{{ country.subregion || 'N/A' }}</p>
-            </div>
-
-          </div>
-
-          <div class="flex items-center">
-            <h3 class="font-semibold text-lg mr-2">Capital</h3>
-            <p class="text-gray-600 dark:text-gray-400">
-              {{ country.capital?.join(', ') || 'N/A' }}
-            </p>
           </div>
 
           <!-- Border Countries -->
           <div v-if="borderCountries && borderCountries.length > 0">
             <div class="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-2 mt-8">
               <h3 class="font-semibold text-lg pr-4">Border Countries:</h3>
-              <div class="flex gap-2">
+              <div class="flex flex-wrap gap-2">
                 <NuxtLink
                   v-for="borderCountry in borderCountries"
                   :key="borderCountry.name?.common"
