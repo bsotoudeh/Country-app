@@ -4,7 +4,7 @@
       <SearchInput v-model="searchValue" class="order-1"/>
       <SelectFilter v-model="selectedValue" class="order-2"/>
     </div>
-    <div class="grid grid-cols-1 lg:grid-cols-4 gap-20 pt-10">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-8 sm:gap-20 pt-8 sm:pt-10">
       <div
         v-for="country in filteredCountries"
         :key="country.code"
