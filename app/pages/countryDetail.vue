@@ -141,7 +141,7 @@ const countryName = computed(() => {
 })
 
 // Fetch country data - make it reactive to route changes
-const { data: country, pending, error, refresh: refreshCountry } = await useAsyncData(
+const { data: country, pending, refresh: refreshCountry } = await useAsyncData(
   () => `country-${countryName.value}`,
   async () => {
     try {

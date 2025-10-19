@@ -49,7 +49,6 @@ const colorMode = useColorMode();
 const { data: allCountries, error } = await useAsyncData('allCountries', async () => {
   try {
     const res = await $fetch('https://restcountries.com/v3.1/all?fields=name,flags,continents,capital,population')
-    console.log(res)
     return res.map((c: any) => ({
       name: c.name.common,
       capital: c.capital[0] ?? 'N/A',
