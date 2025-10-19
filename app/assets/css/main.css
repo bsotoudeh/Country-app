@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* body {
+    background: bg-white;
+    color: text-gray-900;
+  }
+
+body.dark {
+background:bg-gray-900;
+color: text-gray-100;
+} */
