@@ -35,7 +35,7 @@
             :src="country.flags?.png || country.flags?.svg"
             :alt="`${country.name?.common} flag`"
             loading="lazy"
-            class="w-4/5 h-96 object-cover rounded-lg shadow-lg"
+            class="w-full sm:w-4/5 sm:h-96 h-48 object-cover shadow-lg"
           />
         </div>
 
@@ -105,16 +105,18 @@
 
           <!-- Border Countries -->
           <div v-if="borderCountries && borderCountries.length > 0">
-            <div class="flex flex-wrap items-center gap-2 mt-8">
+            <div class="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-2 mt-8">
               <h3 class="font-semibold text-lg pr-4">Border Countries:</h3>
-              <NuxtLink
-                v-for="borderCountry in borderCountries"
-                :key="borderCountry.name?.common"
-                :to="`/countryDetail?name=${encodeURIComponent(borderCountry.name?.common)}`"
-                class="px-4 py-2 bg-white dark:bg-gray-700 rounded shadow-sm hover:shadow-lg transition-shadow duration-200 text-sm"
-              >
-                {{ borderCountry.name?.common }}
-              </NuxtLink>
+              <div class="flex gap-2">
+                <NuxtLink
+                  v-for="borderCountry in borderCountries"
+                  :key="borderCountry.name?.common"
+                  :to="`/countryDetail?name=${encodeURIComponent(borderCountry.name?.common)}`"
+                  class="px-4 py-2 bg-white dark:bg-gray-700 shadow-sm hover:shadow-lg transition-shadow duration-200 text-sm"
+                >
+                  {{ borderCountry.name?.common }}
+                </NuxtLink>
+              </div>
             </div>
           </div>
         </div>

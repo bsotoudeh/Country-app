@@ -3,7 +3,7 @@
         v-model="searchValue"
         leading-icon="i-lucide-search"
         placeholder="Search for a country..."
-        class="border-gray-100"
+        class="border-gray-100 w-full sm:w-1/3"
         :ui="{
             leading: 'h-8',
             leadingIcon: 'p-0 w-4 h-4',

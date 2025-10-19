@@ -3,7 +3,7 @@
     placeholder="Filter by Region"
     v-model="selectedValue"
     :items="options"
-    class="w-48"
+    class="w-1/2 sm:w-48"
   />
 </template>
 

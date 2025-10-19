@@ -1,9 +1,9 @@
 <template>
-  <div class="px-32 py-8" :class="colorMode.value === 'dark' ? 'bg-gray-700' : 'bg-gray-100'">
-      <div class="flex justify-between items-center">
-        <SearchInput v-model="searchValue" class="pb-4"/>
-        <SelectFilter v-model="selectedValue" />
-      </div>
+  <div class="px-8 lg:px-32 py-8" :class="colorMode.value === 'dark' ? 'bg-gray-700' : 'bg-gray-100'">
+    <div class="flex justify-between sm:items-center items-start flex-col sm:flex-row gap-4">
+      <SearchInput v-model="searchValue" class="order-1"/>
+      <SelectFilter v-model="selectedValue" class="order-2"/>
+    </div>
     <div class="grid grid-cols-1 lg:grid-cols-4 gap-20 pt-10">
       <div
         v-for="country in filteredCountries"
